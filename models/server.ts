@@ -1,14 +1,15 @@
 import express from 'express';
 import cors from 'cors';
+var { graphqlHTTP } = require("express-graphql")
 class Server {
     app: any;
     port: any;
-    // categorias_cursoPath: string;
+    graphqlPath: string;
 
     constructor() {
         this.app = express();
         this.port = process.env.PORT;
-        // this.categorias_cursoPath = '/categorias-curso';
+        this.graphqlPath = '/graphql';
 
         // Conectar a base de datos
         // this.conectarDB();
@@ -37,7 +38,7 @@ class Server {
 
     routes() {
 
-        // this.app.use(this.categorias_cursoPath, require('../routes/categorias_curso.routes'))
+        this.app.use(this.graphqlPath, graphqlHTTP())
 
     }
 

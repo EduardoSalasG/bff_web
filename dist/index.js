@@ -8,9 +8,10 @@ const app = express();
 const server = new ApolloServer({
     typeDefs,
     resolvers,
+    csrfPrevention: false,
 });
 await server.start();
-app.use('/graphql', cors({ methods: ['GET', 'POST'], credentials: true }), express.json(), expressMiddleware(server));
+app.use('/graphql', cors({ origin: ['http://localhost:4000/', 'http://localhost:8080', 'http://localhost:8080/tipo_usuarios/', 'https://studio.apollographql.com'] }), express.json(), expressMiddleware(server));
 app.listen({ port: 4000 }, () => {
     console.log(`🚀  Server ready at: http://localhost:4000/graphql`);
 });

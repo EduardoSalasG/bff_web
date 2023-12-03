@@ -10,7 +10,7 @@ const typeDefs = gql `
 
 
   type Query{
-    tipo_usuarioById(TUS_ID:ID!): TipoUsuario
+    tipo_usuarioById(TUS_ID:ID): TipoUsuario
     todosTiposUsuarios: [TipoUsuario]
   }
 `;

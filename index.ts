@@ -4,6 +4,8 @@ import cors from 'cors';
 import express from 'express';
 import { typeDefs } from './schema.js';
 import { resolvers } from './resolvers.js';
+import 'dotenv/config'
+
 
 const app = express();
 

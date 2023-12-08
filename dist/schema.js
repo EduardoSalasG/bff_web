@@ -1,6 +1,5 @@
 import { gql } from "apollo-server-express";
-
-const typeDefs = gql`
+const typeDefs = gql `
 
   type TipoUsuario {
     TUS_ID: ID!
@@ -27,7 +26,5 @@ const typeDefs = gql`
     usuario_ById(USU_ID:ID) : Usuario
     getUsuarios: [Usuario]
   }
-`
-
-
-export { typeDefs }
+`;
+export { typeDefs };

@@ -20,12 +20,18 @@ const typeDefs = gql`
     USU_CONTRASENA: String!
   }
 
+  type PreguntaSeguridad {
+    PSE_ID: ID!
+    PSE_ENUNCIADO: String!
+  }
 
   type Query{
     tipo_usuarioById(TUS_ID:ID): TipoUsuario
     todosTiposUsuarios: [TipoUsuario]
     usuario_ById(USU_ID:ID) : Usuario
     getUsuarios: [Usuario]
+    getPreguntasSeguridad: [PreguntaSeguridad]
+    getPreguntaSeguridadById(PSE_ID:ID): PreguntaSeguridad
   }
 `
 

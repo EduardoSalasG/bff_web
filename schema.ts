@@ -9,10 +9,16 @@ const typeDefs = gql`
     TUS_ESTADO: Boolean!
   }
 
+  type PreguntaSeguridad {
+    PSE_ID: ID!
+    PSE_ENUNCIADO: String!
+  }
 
   type Query{
     tipo_usuarioById(TUS_ID:ID): TipoUsuario
     todosTiposUsuarios: [TipoUsuario]
+    getPreguntasSeguridad: [PreguntaSeguridad]
+    getPreguntaSeguridadById(PSE_ID:ID): PreguntaSeguridad
   }
 `
 

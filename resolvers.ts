@@ -15,7 +15,20 @@ const resolvers = {
             const allTipoUsuarios = response.data.body;
             return allTipoUsuarios
 
-        }
+        },
+        getPreguntasSeguridad: async () => {
+            const response = await axios.get(`http://localhost:8080/preguntas_seguridad/`)
+            const allPreguntaSeguridad = response.data.body;
+            return allPreguntaSeguridad
+
+        },
+        getPreguntaSeguridadById: async (parent: any, { PSE_ID }) => {
+            const preguntaSeguridadId = PSE_ID
+            const response = await axios.get(`http://localhost:8080/preguntas_seguridad/${preguntaSeguridadId}`)
+            const preguntaSeguridadData = response.data.body;
+            return preguntaSeguridadData
+        },
+
     }
 }
 

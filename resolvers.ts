@@ -342,7 +342,7 @@ const resolvers = {
         }
     },
     LeadProducto: {
-        Curso: async (parent: any) => {
+        Lead: async (parent: any) => {
             const productoId = parent.PRO_ID
             const response = await axios.get(`${process.env.URL_BASE}${process.env.PORT2}/productos/${productoId}`)
             const productoData = response.data.body;

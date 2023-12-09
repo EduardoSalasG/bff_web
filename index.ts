@@ -17,7 +17,7 @@ const server = new ApolloServer({
 
 await server.start();
 app.use('/graphql',
-    cors<cors.CorsRequest>({ origin: ['http://localhost:4000/', 'http://localhost:8080', 'http://localhost:8080/tipo_usuarios/', 'https://studio.apollographql.com'] }),
+    cors<cors.CorsRequest>({ origin: ['http://localhost:4000', 'https://studio.apollographql.com', 'http://localhost:4200'] }),
     express.json(),
     expressMiddleware(server));
 

@@ -119,7 +119,7 @@ const typeDefs = gql`
 
   type LeadProducto{
     PRO_ID: ID!
-    Curso: Producto!
+    Lead: Producto!
     LEA_URL_DIR: String!
     SLE_ID: Int!
     SubcategoriaLead: SubcategoriaLead!

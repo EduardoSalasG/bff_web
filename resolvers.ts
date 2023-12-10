@@ -379,6 +379,14 @@ const resolvers = {
             return subcategoriaCursoData
         }
     },
+    CategoriaLead: {
+        Subcategorias: async (parent: any) => {
+            const categoriaLeadId = parent.CLE_ID
+            const response = await axios.get(`${process.env.URL_BASE}${process.env.PORT2}/subcategorias-lead/by-categoria/${categoriaLeadId}`)
+            const subcategoriasLeadData = response.data.body;
+            return subcategoriasLeadData
+        }
+    },
     SubcategoriaLead: {
         CategoriaLead: async (parent: any) => {
             const categoriaLeadId = parent.CLE_ID

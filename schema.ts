@@ -91,6 +91,7 @@ const typeDefs = gql`
   type CategoriaLead{
     CLE_ID: ID!
     CLE_NOMBRE: String!
+    Subcategorias: [SubcategoriaLead]
   }
 
   type CursoProducto{
@@ -160,8 +161,8 @@ const typeDefs = gql`
   type SubcategoriaLead{
     SLE_ID: ID!
     SLE_NOMBRE: String!
-    CLE_ID:Int!
-    CategoriaLead: CategoriaLead!
+    CLE_ID:Int
+    CategoriaLead: CategoriaLead
   }
 
   type TipoDeDuracion{

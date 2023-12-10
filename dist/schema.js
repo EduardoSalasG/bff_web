@@ -81,12 +81,13 @@ const typeDefs = gql `
     PRO_ID:Int!
     Producto: Producto!
   }
-
+  
   type CategoriaCurso{
     CCU_ID: ID!
     CCU_NOMBRE: String!
+    Subcategorias: [SubcategoriaCurso]
   }
-
+  
   type CategoriaLead{
     CLE_ID: ID!
     CLE_NOMBRE: String!
@@ -152,8 +153,8 @@ const typeDefs = gql `
   type SubcategoriaCurso{
     SCU_ID: ID!
     SCU_NOMBRE: String!
-    CCU_ID:Int!
-    CategoriaCurso: CategoriaCurso!
+    CCU_ID:Int
+    CategoriaCurso: CategoriaCurso
   }
 
   type SubcategoriaLead{

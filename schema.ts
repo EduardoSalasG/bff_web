@@ -179,6 +179,13 @@ const typeDefs = gql`
     PRO_ID:Int!
     Producto:Producto!
   }
+
+  type RespuestaLogin{
+    ok: Boolean!
+    status: Int!
+    token: String!
+  }
+  
   type Query{
     getTipoUsuarioById(TUS_ID:ID): TipoUsuario
     getTiposUsuarios: [TipoUsuario]
@@ -242,6 +249,37 @@ const typeDefs = gql`
 
     getValoraciones:[Valoracion]
     getValoracionById(VAL_ID:ID): Valoracion
+  }
+
+  type Mutation{
+    login(
+    USU_CORREO: String!
+    USU_CONTRASENA: String!
+    ): RespuestaLogin
+
+    newCurso(
+      PRO_NOMBRE: String!
+      PRO_DESCRIPCION: String!
+      PRO_DESCRIPCION_CORTA: String!
+      PRO_PRECIO: Int!
+      PRO_PRECIO_DESCUENTO: Int!
+      CUR_DIRIGIDO_A: String!
+      CUR_OBJETIVOS: String!
+      CUR_ESTRUCTURA: String!
+      CUR_IMAGEN_1: String!
+      CUR_IMAGEN_2: String!
+      CUR_VIDEO_PROMOCIONAL: String!
+      CUR_FECHA_INICIO: String!
+      CUR_CANTIDAD_MIN_PARTICIPANTES: Int!
+      CUR_CANTIDAD_MAX_PARTICIPANTES: Int!
+      CUR_CODIGO_SENCE: String!
+      CUR_DURACION: Int!
+      CUR_INCLUYE_CERTIFICACION: Boolean!
+      USU_ID: Int!
+      TDU_ID: Int!
+      MOD_ID: Int!
+      SCU_ID: Int!
+    ):Boolean
   }
 `
 //FIXME: campos que son date

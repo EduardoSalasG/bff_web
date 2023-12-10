@@ -392,6 +392,74 @@ const resolvers = {
             const productoData = response.data.body;
             return productoData
         }
+    },
+    Mutation: {
+        login: async (root: any, args: any) => {
+            const loginCorreo = args.USU_CORREO
+            const loginContrasena = args.USU_CONTRASENA
+
+            const response = await axios.post(`${process.env.URL_BASE}${process.env.PORT}/usuarios/login`, {
+                USU_CORREO: loginCorreo,
+                USU_CONTRASENA: loginContrasena
+            });
+
+            return response.data;
+        },
+        newCurso: async (root: any, args: any) => {
+
+            const PRO_NOMBRE = args.PRO_NOMBRE
+            const PRO_DESCRIPCION = args.PRO_DESCRIPCION
+            const PRO_DESCRIPCION_CORTA = args.PRO_DESCRIPCION_CORTA
+            const PRO_PRECIO = args.PRO_PRECIO
+            const PRO_PRECIO_DESCUENTO = args.PRO_PRECIO_DESCUENTO
+            const CUR_DIRIGIDO_A = args.CUR_DIRIGIDO_A
+            const CUR_OBJETIVOS = args.CUR_OBJETIVOS
+            const CUR_ESTRUCTURA = args.CUR_ESTRUCTURA
+            const CUR_IMAGEN_1 = args.CUR_IMAGEN_1
+            const CUR_IMAGEN_2 = args.CUR_IMAGEN_2
+            const CUR_VIDEO_PROMOCIONAL = args.CUR_VIDEO_PROMOCIONAL
+            const CUR_FECHA_INICIO = args.CUR_FECHA_INICIO
+            const CUR_CANTIDAD_MIN_PARTICIPANTES = args.CUR_CANTIDAD_MIN_PARTICIPANTES
+            const CUR_CANTIDAD_MAX_PARTICIPANTES = args.CUR_CANTIDAD_MAX_PARTICIPANTES
+            const CUR_CODIGO_SENCE = args.CUR_CODIGO_SENCE
+            const CUR_DURACION = args.CUR_DURACION
+            const CUR_INCLUYE_CERTIFICACION = args.CUR_INCLUYE_CERTIFICACION
+            const USU_ID = args.USU_ID
+            const TDU_ID = args.TDU_ID
+            const MOD_ID = args.MOD_ID
+            const SCU_ID = args.SCU_ID
+
+
+            const response = await axios.post(`${process.env.URL_BASE}${process.env.PORT2}/cursos/`,
+                {
+                    PRO_NOMBRE: PRO_NOMBRE,
+                    PRO_DESCRIPCION: PRO_DESCRIPCION,
+                    PRO_DESCRIPCION_CORTA: PRO_DESCRIPCION_CORTA,
+                    PRO_PRECIO: PRO_PRECIO,
+                    PRO_PRECIO_DESCUENTO: PRO_PRECIO_DESCUENTO,
+                    CUR_DIRIGIDO_A: CUR_DIRIGIDO_A,
+                    CUR_OBJETIVOS: CUR_OBJETIVOS,
+                    CUR_ESTRUCTURA: CUR_ESTRUCTURA,
+                    CUR_IMAGEN_1: CUR_IMAGEN_1,
+                    CUR_IMAGEN_2: CUR_IMAGEN_2,
+                    CUR_VIDEO_PROMOCIONAL: CUR_VIDEO_PROMOCIONAL,
+                    CUR_FECHA_INICIO: CUR_FECHA_INICIO,
+                    CUR_CANTIDAD_MIN_PARTICIPANTES: CUR_CANTIDAD_MIN_PARTICIPANTES,
+                    CUR_CANTIDAD_MAX_PARTICIPANTES: CUR_CANTIDAD_MAX_PARTICIPANTES,
+                    CUR_CODIGO_SENCE: CUR_CODIGO_SENCE,
+                    CUR_DURACION: CUR_DURACION,
+                    CUR_INCLUYE_CERTIFICACION: CUR_INCLUYE_CERTIFICACION,
+                    USU_ID: USU_ID,
+                    TDU_ID: TDU_ID,
+                    MOD_ID: MOD_ID,
+                    SCU_ID: SCU_ID
+                }
+            );
+
+            return true;
+        }
+
+
     }
 }
 export { resolvers };

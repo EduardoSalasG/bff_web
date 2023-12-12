@@ -188,6 +188,10 @@ const typeDefs = gql`
     msg: String
     token: String
   }
+
+  type RespuestaMercadoPago{
+    init_point: String
+  }
   
   type Query{
     getTipoUsuarioById(TUS_ID:ID): TipoUsuario
@@ -283,8 +287,18 @@ const typeDefs = gql`
       MOD_ID: Int!
       SCU_ID: Int!
     ):Boolean
+
+    newPagoMercadoPago(
+      VEN_MONTO: Int!
+      VEN_RUT_DT: String!
+      TDT_ID: Int!
+      USU_ID: Int!
+      PRO_ID: Int!
+      USU_CORREO: String!
+      PRO_NOMBRE: String!
+    ):RespuestaMercadoPago
   }
 `
-//FIXME: campos que son date
+
 
 export { typeDefs }

@@ -446,7 +446,7 @@ const resolvers = {
             const SCU_ID = args.SCU_ID
 
 
-            const response = await axios.post(`${process.env.URL_BASE}${process.env.PORT2}/cursos/`,
+            await axios.post(`${process.env.URL_BASE}${process.env.PORT2}/cursos/`,
                 {
                     PRO_NOMBRE: PRO_NOMBRE,
                     PRO_DESCRIPCION: PRO_DESCRIPCION,
@@ -473,6 +473,30 @@ const resolvers = {
             );
 
             return true;
+        },
+        newPagoMercadoPago: async (root: any, args: any) => {
+            const VEN_MONTO = args.VEN_MONTO
+            const VEN_RUT_DT = args.VEN_RUT_DT
+            const TDT_ID = args.TDT_ID
+            const USU_ID = args.USU_ID
+            const PRO_ID = args.PRO_ID
+            const USU_CORREO = args.USU_CORREO
+            const PRO_NOMBRE = args.PRO_NOMBRE
+
+            const response = await axios.post(`${process.env.URL_BASE}${process.env.PORT1}/mercadopago/create-order`,
+                {
+                    VEN_MONTO: VEN_MONTO,
+                    VEN_RUT_DT: VEN_RUT_DT,
+                    TDT_ID: TDT_ID,
+                    USU_ID: USU_ID,
+                    PRO_ID: PRO_ID,
+                    USU_CORREO: USU_CORREO,
+                    PRO_NOMBRE: PRO_NOMBRE
+                }
+            );
+
+            return response.data
+
         }
 
 

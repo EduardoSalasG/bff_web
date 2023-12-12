@@ -418,7 +418,7 @@ const resolvers = {
                 USU_CORREO: loginCorreo,
                 USU_CONTRASENA: loginContrasena
             });
-
+            console.log(response.data)
             return response.data;
         },
         newCurso: async (root: any, args: any) => {

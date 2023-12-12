@@ -185,7 +185,8 @@ const typeDefs = gql`
   type RespuestaLogin{
     ok: Boolean!
     status: Int!
-    token: String!
+    msg: String
+    token: String
   }
   
   type Query{

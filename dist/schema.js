@@ -192,6 +192,13 @@ const typeDefs = gql `
   type RespuestaMercadoPago{
     init_point: String
   }
+
+  type RespuestaValidarToken{
+    ok: Boolean
+    status: Int
+    msg: String
+    user: String
+  }
   
   type Query{
     getTipoUsuarioById(TUS_ID:ID): TipoUsuario
@@ -297,6 +304,10 @@ const typeDefs = gql `
       USU_CORREO: String!
       PRO_NOMBRE: String!
     ):RespuestaMercadoPago
+
+    validarToken(
+      Authorization: String
+    ): RespuestaValidarToken
   }
 `;
 export { typeDefs };

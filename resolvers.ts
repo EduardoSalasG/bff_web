@@ -503,6 +503,24 @@ const resolvers = {
 
             return response.data
 
+        },
+        validarToken: async (root: any, args: any) => {
+            // const authorization = context.req.headers.Authorization
+            // console.log(authorization)
+            // const response = await axios.post(
+            //     `${process.env.URL_BASE}${process.env.PORT}/auth/validar-token`,
+            //     {},
+            //     {
+            //         headers: {
+            //             Authorization: authorization,
+            //         },
+            //     }
+            // );
+            const authorization = args.Authorization
+            const response = await axios.post(`${process.env.URL_BASE}${process.env.PORT}/auth/validar-token`, {
+                Authorization: authorization
+            })
+            return response.data
         }
 
 

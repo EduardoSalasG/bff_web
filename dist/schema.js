@@ -72,14 +72,14 @@ const typeDefs = gql `
     VEN_ID:ID!
     VEN_MONTO: Int!
     VEN_RUT_DT: String!
-    EVE_ID:Int!
-    EstadoVenta: EstadoVenta!
-    TDT_ID:Int!
-    TipoDt: TipoDt!
-    USU_ID:Int!
-    Usuario: Usuario!
-    PRO_ID:Int!
-    Producto: Producto!
+    EVE_ID:Int
+    EstadoVenta: EstadoVenta
+    TDT_ID:Int
+    TipoDt: TipoDt
+    USU_ID:Int
+    Usuario: Usuario
+    PRO_ID:Int
+    Producto: Producto
   }
   
   type CategoriaCurso{
@@ -135,11 +135,11 @@ const typeDefs = gql `
   type Producto{
     PRO_ID: ID!
     PRO_NOMBRE: String!
-    PRO_DESCRIPCION: String!
-    PRO_DESCRIPCION_CORTA: String!
-    PRO_PRECIO: Int!
-    PRO_PRECIO_DESCUENTO: Int!
-    PRO_DESTACADO: Boolean!
+    PRO_DESCRIPCION: String
+    PRO_DESCRIPCION_CORTA: String
+    PRO_PRECIO: Int
+    PRO_PRECIO_DESCUENTO: Int
+    PRO_DESTACADO: Boolean
   }
 
   type Promocion{
@@ -223,6 +223,7 @@ const typeDefs = gql `
 
     getVentas:[Venta]
     getVentaById(VEN_ID:ID): Venta
+    getVentasByUserId(USU_ID:ID): [Venta]
     
     getCategoriasCurso:[CategoriaCurso]
     getCategoriaCursoById(CCU_ID:ID): CategoriaCurso

@@ -122,6 +122,12 @@ const resolvers = {
             const ventaData = response.data.body;
             return ventaData
         },
+        getVentasByUserId: async (parent: any, { USU_ID }) => {
+            const userId = USU_ID
+            const response = await axios.get(`${process.env.URL_BASE}${process.env.PORT1}/ventas/ventas-by-user-id/${userId}`)
+            const ventaData = response.data.body;
+            return ventaData
+        },
         getCategoriasCurso: async () => {
             const response = await axios.get(`${process.env.URL_BASE}${process.env.PORT2}/categorias-curso/`)
             const allCategoriasCurso = response.data.body;

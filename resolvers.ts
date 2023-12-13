@@ -339,6 +339,12 @@ const resolvers = {
             const response = await axios.get(`${process.env.URL_BASE}${process.env.PORT}/usuarios/${usuarioId}`)
             const usuarioData = response.data.body;
             return usuarioData
+        },
+        Producto: async (parent: any) => {
+            const productoId = parent.PRO_ID
+            const response = await axios.get(`${process.env.URL_BASE}${process.env.PORT2}/productos/${productoId}`)
+            const ventaData = response.data.body;
+            return ventaData
         }
     },
     LeadProducto: {

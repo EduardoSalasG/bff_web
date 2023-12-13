@@ -522,9 +522,10 @@ const resolvers = {
             //         },
             //     }
             // );
-            const authorization = args.Authorization
+            const authorization = args.authorization
+            console.log(authorization)
             const response = await axios.post(`${process.env.URL_BASE}${process.env.PORT}/auth/validar-token`, {
-                Authorization: authorization
+                authorization
             })
             return response.data
         }

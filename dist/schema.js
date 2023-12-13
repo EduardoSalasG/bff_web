@@ -80,6 +80,7 @@ const typeDefs = gql `
     Usuario: Usuario
     PRO_ID:Int
     Producto: Producto
+    updatedAt: String!
   }
   
   type CategoriaCurso{
@@ -197,7 +198,14 @@ const typeDefs = gql `
     ok: Boolean
     status: Int
     msg: String
-    user: String
+    user: UserTokenResponse
+  }
+
+  type UserTokenResponse {
+    id: Int
+    nombre: String
+    email: String
+    tipoUsuario: [Int]
   }
   
   type Query{
@@ -307,7 +315,7 @@ const typeDefs = gql `
     ):RespuestaMercadoPago
 
     validarToken(
-      Authorization: String
+      authorization: String
     ): RespuestaValidarToken
   }
 `;

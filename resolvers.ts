@@ -128,6 +128,12 @@ const resolvers = {
             const ventaData = response.data.body;
             return ventaData
         },
+        getCursosByUserId: async (parent: any, { USU_ID }) => {
+            const userId = USU_ID
+            const response = await axios.get(`${process.env.URL_BASE}${process.env.PORT2}/cursos/cursos-by-user-id/${userId}`)
+            const cursoData = response.data.body;
+            return cursoData
+        },
         getCategoriasCurso: async () => {
             const response = await axios.get(`${process.env.URL_BASE}${process.env.PORT2}/categorias-curso/`)
             const allCategoriasCurso = response.data.body;

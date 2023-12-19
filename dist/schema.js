@@ -248,6 +248,8 @@ const typeDefs = gql `
 
     getCursosProducto:[CursoProducto]
     getCursoProductoById(PRO_ID:ID): CursoProducto
+    getCursosByUserId(USU_ID:ID): [CursoProducto]
+
 
     getLeadsProducto:[LeadProducto]
     getLeadProductoById(PRO_ID:ID): LeadProducto
